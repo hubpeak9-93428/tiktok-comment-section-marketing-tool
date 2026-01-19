@@ -1,0 +1,73 @@
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.madhub.tiktokcommentsection">
+
+    <!-- 
+        The application name identifies the TikTok comment section marketing tool.
+        This tool aims to streamline social media management by automating the interaction processes within TikTok.
+    -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+        
+        <!-- MainActivity serves as the entry point of the application. 
+             This is where users interact with the app to configure their automation preferences. -->
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 
+            AutomationService works in the background to execute automation tasks.
+            This service continuously runs to ensure the tools provided by MadHub operate 24/7 without user intervention. 
+        -->
+        <service android:name=".AutomationService" />
+
+    </application>
+
+    <!-- 
+        Permissions are essential for enabling the app to perform necessary functions. 
+        Each permission addresses specific challenges faced by users in social media marketing.
+    -->
+
+    <!-- 
+        This permission allows the app to access the internet, solving the problem of connecting to TikTok API 
+        for automated interactions and updates. It ensures data can be sent and received reliably.
+    -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- 
+        Access to external storage is required for saving user configurations and logs.
+        This addresses the challenge of persistent data management, allowing users to maintain their settings 
+        even after closing the app.
+    -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- 
+        Wake lock permission is crucial for keeping the device awake during crucial automation tasks.
+        This solves the limitation of Android's battery management that might interrupt background processes essential 
+        for consistent operation in social media marketing.
+    -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+</manifest>
+```
+
+### Explanation of Key Elements:
+- **Application Name and Package**: Clearly defines the purpose of the app and its unique identity.
+- **MainActivity**: The initial user interface where settings can be configured, addressing the need for user engagement in automation.
+- **AutomationService**: Ensures continuous operation, tackling the challenge of needing persistent social media management.
+- **Permissions**: 
+  - **Internet Access**: Enables necessary connectivity, vital for any online interaction.
+  - **Storage Access**: Facilitates persistent data retention, overcoming the hurdles of application closures.
+  - **Wake Lock**: Prevents disruptions during crucial tasks, ensuring reliability in automation. 
+
+This configuration aligns with MadHub's capability to provide a comprehensive social media management tool while adhering to best practices and compliance standards.
